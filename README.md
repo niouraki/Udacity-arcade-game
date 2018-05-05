@@ -1,6 +1,30 @@
-frontend-nanodegree-arcade-game
-===============================
+# Arcade Game
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+This arcade game is created as a project for Udacity FEND Nanodegree.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## Instructions
+
+### Goal
+
+The goal of the game is to move the player on the water area to earn points.
+
+### Getting started
+- To play the game run the html file at your browser.
+- Use the arrow keys to move the player.
+- If you reach the water area, you get one point.
+- If you collide with the enemies, you lose one point.
+- If you get 5 points, you receive a congratulations message.
+- If your points are below 0, you get a motivational message.
+- When you reach the water or collide with the enemies, you will hear a sound.
+
+### Technologies used
+- html
+- css
+- JavaScript
+
+### Resources
+- Sounds downloaded from [Free Sound Effects] (http://soundbible.com/free-sound-effects-1.html).
+
+### Author
+
+This game is created by **Charikleia Niouraki** for the Udacity FEND Nanodegree.
