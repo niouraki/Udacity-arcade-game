@@ -83,6 +83,7 @@ Player.prototype.countScore = function() {
     if (counting === 5) {
       alert("Great job! Keep going.");
     }
+    winningSound.play();
 };
 
 //When player collides remove one point from score
@@ -93,6 +94,7 @@ Player.prototype.removeScore = function() {
   if(counting === -1) {
     alert("Stay focused. You can do it!");
   }
+  losingSound.play();
 };
 
 //instantiates the player object
@@ -121,3 +123,7 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+//Sounds from http://soundbible.com/free-sound-effects-1.html
+var winningSound = new Audio("sounds/win.wav");
+var losingSound = new Audio("sounds/lose.wav");
