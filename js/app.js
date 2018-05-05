@@ -77,23 +77,23 @@ Player.prototype.reset = function() {
 
 //When player reach water add one point to score
 Player.prototype.countScore = function() {
-    counting++
+    counting++;
     score.innerHTML = "Score: " + counting;
 
     if (counting === 5) {
-      alert("Great job! Keep going.")
+      alert("Great job! Keep going.");
     }
-}
+};
 
 //When player collides remove one point from score
 Player.prototype.removeScore = function() {
-  counting--
+  counting--;
   score.innerHTML = "Score: " + counting;
 
   if(counting === -1) {
-    alert("Stay focused. You can do it!")
+    alert("Stay focused. You can do it!");
   }
-}
+};
 
 //instantiates the player object
 var player = new Player(200, 400);
