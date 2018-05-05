@@ -2,6 +2,7 @@ var counting = 0;
 
 //Create the score element
 var score = document.createElement("div");
+score.id = "score";
 score.innerHTML = "Score: 0";
 document.body.appendChild(score);
 
