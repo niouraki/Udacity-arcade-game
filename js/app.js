@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 var counting = 0;
 
 //Create the score element
@@ -12,18 +12,27 @@ var Enemy = function(x, y, min, max) {
   this.sprite = 'images/enemy-bug.png';
   this.x = x;
   this.y = y;
-  this.speed = Math.floor((Math.random() * (max - min + 1)) + min);
+
+  //Randomize enemy speed in the beginning of the game
+  this.changeSpeed(100, 200);
 };
 
 Enemy.prototype.update = function(dt) {
   var distance = this.speed * dt;
-  this.x = this.x + distance;
+  this.x += distance;
 
   //Make the enemies reappear after they exit the screen on the right
+  //Changes the speed every time the enemy reappears
   if (this.x > 500) {
     this.x = 0;
+    this.changeSpeed(100, 200);
   }
 };
+
+//Changes the speed randomly
+Enemy.prototype.changeSpeed = function(min, max) {
+  this.speed = Math.floor((Math.random() * (max - min + 1)) + min);
+}
 
 // Draw the enemy on the screen
 Enemy.prototype.render = function() {
@@ -68,14 +77,16 @@ Player.prototype.handleInput = function(direction) {
     this.reset();
     this.countScore();
   }
+
+  //Change character sprite on key press
   if (direction === "character1") {
     this.sprite = "images/char-boy.png";
-  }else if (direction === "character2") {
+  } else if (direction === "character2") {
     this.sprite = "images/char-horn-girl.png";
-  }else if (direction === "character3") {
+  } else if (direction === "character3") {
     this.sprite = "images/char-pink-girl.png";
-  }else if (direction === "character4") {
-    this.sprite = "images/char-princess-girl.png"
+  } else if (direction === "character4") {
+    this.sprite = "images/char-princess-girl.png";
   }
 };
 
@@ -111,14 +122,10 @@ Player.prototype.removeScore = function() {
 var player = new Player(200, 400);
 
 //create an array, instantiates the enemy object and push it inside the array
-var enemy1 = new Enemy(40, 225, 80, 120);
-var enemy2 = new Enemy(40, 145, 100, 150);
-var enemy3 = new Enemy(40, 62, 90, 110);
-var enemy4 = new Enemy(0, 225, 85, 100);
-var enemy5 = new Enemy(0, 145, 100, 130);
-var enemy6 = new Enemy(0, 62, 95, 140);
-var allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5, enemy6];
-
+var enemy1 = new Enemy(40, 225, 100, 200);
+var enemy2 = new Enemy(40, 145, 90, 210);
+var enemy3 = new Enemy(40, 62, 110, 200);
+var allEnemies = [enemy1, enemy2, enemy3];
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method
@@ -132,7 +139,6 @@ document.addEventListener('keyup', function(e) {
     68: "character2",
     83: "character3",
     87: "character4"
-
   };
 
   player.handleInput(allowedKeys[e.keyCode]);
