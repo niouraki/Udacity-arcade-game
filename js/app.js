@@ -13,7 +13,6 @@ var Enemy = function(x, y, min, max) {
   this.x = x;
   this.y = y;
   this.speed = Math.floor((Math.random() * (max - min + 1)) + min);
-  console.log(this.speed);
 };
 
 Enemy.prototype.update = function(dt) {
@@ -69,6 +68,15 @@ Player.prototype.handleInput = function(direction) {
     this.reset();
     this.countScore();
   }
+  if (direction === "character1") {
+    this.sprite = "images/char-boy.png";
+  }else if (direction === "character2") {
+    this.sprite = "images/char-horn-girl.png";
+  }else if (direction === "character3") {
+    this.sprite = "images/char-pink-girl.png";
+  }else if (direction === "character4") {
+    this.sprite = "images/char-princess-girl.png"
+  }
 };
 
 //Reset the position of the player once it reaches the water and try to cross it
@@ -119,7 +127,12 @@ document.addEventListener('keyup', function(e) {
     37: 'left',
     38: 'up',
     39: 'right',
-    40: 'down'
+    40: 'down',
+    65: "character1",
+    68: "character2",
+    83: "character3",
+    87: "character4"
+
   };
 
   player.handleInput(allowedKeys[e.keyCode]);
