@@ -1,3 +1,4 @@
+"use strict";
 var counting = 0;
 
 //Create the score element
@@ -7,11 +8,12 @@ score.innerHTML = "Score: 0";
 document.body.appendChild(score);
 
 // Enemies our player must avoid
-var Enemy = function(x, y, speed) {
+var Enemy = function(x, y, min, max) {
   this.sprite = 'images/enemy-bug.png';
   this.x = x;
   this.y = y;
-  this.speed = speed;
+  this.speed = Math.floor((Math.random() * (max - min + 1)) + min);
+  console.log(this.speed);
 };
 
 Enemy.prototype.update = function(dt) {
@@ -101,13 +103,14 @@ Player.prototype.removeScore = function() {
 var player = new Player(200, 400);
 
 //create an array, instantiates the enemy object and push it inside the array
-var enemy1 = new Enemy(40, 225, 100);
-var enemy2 = new Enemy(40, 145, 75);
-var enemy3 = new Enemy(40, 62, 90);
-var enemy4 = new Enemy(0, 225, 60);
-var enemy5 = new Enemy(0, 145, 140);
-var enemy6 = new Enemy(0, 62, 150);
+var enemy1 = new Enemy(40, 225, 80, 120);
+var enemy2 = new Enemy(40, 145, 100, 150);
+var enemy3 = new Enemy(40, 62, 90, 110);
+var enemy4 = new Enemy(0, 225, 85, 100);
+var enemy5 = new Enemy(0, 145, 100, 130);
+var enemy6 = new Enemy(0, 62, 95, 140);
 var allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5, enemy6];
+
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method
