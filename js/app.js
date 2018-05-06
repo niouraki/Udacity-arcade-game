@@ -39,8 +39,8 @@ var Player = function(x, y) {
 //Check collision
 Player.prototype.update = function() {
   for (var i = 0; i < allEnemies.length; i++) {
-    if (allEnemies[i].x <= this.x + 40 &&
-      allEnemies[i].x >= this.x - 40 &&
+    if (allEnemies[i].x <= this.x + 75 &&
+      allEnemies[i].x >= this.x - 75 &&
       allEnemies[i].y <= this.y + 40 &&
       allEnemies[i].y >= this.y - 40) {
       this.reset();
