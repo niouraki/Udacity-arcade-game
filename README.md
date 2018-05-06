@@ -18,7 +18,7 @@ You can also earn more points by collecting the hearts.
 - If you collide with the enemies, you lose one point.
 - If you get 5 points, you receive a congratulations message.
 - If your points are below 0, you get a motivational message.
-- When you reach the water or collide with the enemies, you will hear a sound.
+- When you reach the water, collide with the enemies or collect a heart you will hear a sound.
 
 ### Technologies used
 - html
