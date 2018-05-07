@@ -31,3 +31,7 @@ You can also earn more points by collecting the hearts.
 ### Author
 
 This game is created by **Charikleia Niouraki** for the Udacity FEND Nanodegree.
+
+### License
+
+Copyright © 2018, Niouraki Charikleia.Released under Udacity License.
